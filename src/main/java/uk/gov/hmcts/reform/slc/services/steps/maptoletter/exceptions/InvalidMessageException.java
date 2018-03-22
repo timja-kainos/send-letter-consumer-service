@@ -1,14 +1,16 @@
 package uk.gov.hmcts.reform.slc.services.steps.maptoletter.exceptions;
 
-import uk.gov.hmcts.reform.logging.exception.AbstractLoggingException;
 import uk.gov.hmcts.reform.logging.exception.AlertLevel;
+import uk.gov.hmcts.reform.logging.exception.UnknownErrorCodeException;
 
-import static uk.gov.hmcts.reform.slc.logging.ErrorCode.UNKNOWN;
-
-public class InvalidMessageException extends AbstractLoggingException {
+/**
+ * SonarQube reports as error. Max allowed - 5 parents
+ */
+@SuppressWarnings("squid:MaximumInheritanceDepth")
+public class InvalidMessageException extends UnknownErrorCodeException {
 
     public InvalidMessageException(String message, Throwable cause) {
-        super(AlertLevel.P4, UNKNOWN, message, cause);
+        super(AlertLevel.P4, message, cause);
     }
 
     public InvalidMessageException(String message) {
